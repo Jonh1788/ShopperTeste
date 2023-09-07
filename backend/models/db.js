@@ -1,11 +1,12 @@
-const mysql = require('mysql2/promise');
+const mysql = require('mysql2/promise')
+require('dotenv').config()
 
 
 const db = mysql.createPool({
-  host: 'localhost',
-  user: 'admShopper',
-  password: 'admShopper',
-  database: 'shopper',
+  host: process.env.DATABASE_HOST,
+  user: process.env.DATABASE_USER,
+  password: process.env.DATABASE_PASS,
+  database: process.env.DATABASE,
 });
 
 async function GroupReturn(){

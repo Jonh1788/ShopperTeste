@@ -1,8 +1,8 @@
-const { selectOne, atualizar, selectUnits, hasPack, GroupReturn, isPack } = require("./db")
+const { selectOne, atualizar, selectUnits, hasPack, isPack, GroupReturn } = require("./db")
 
 const validar = async (prodID, newValue) => {
 
-    await GroupReturn();
+    await GroupReturn()
     const id = Number(prodID)
     const novoValor = Number(newValue)
     const res = await hasPack(id) ? await selectUnits(id) : await selectOne(id)
@@ -55,7 +55,7 @@ const enviar = async (prodID, new_value)  => {
     console.log(dados)
     const id = Number(prodID)
     const novoValor = Number(new_value)
-    
+
     if(await isPack(id)){
 
         await atualizar(id, novoValor)

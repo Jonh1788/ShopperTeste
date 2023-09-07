@@ -3,7 +3,7 @@
 
 const validarAPI = (objeto : any, 
     setDados: React.Dispatch<React.SetStateAction<any[]>>) => {
-    fetch("http://localhost:3001/validar", {
+    fetch("/validar", {
           method: "POST",
           headers: {
             "Content-Type": "application/json"
@@ -22,10 +22,11 @@ const validarAPI = (objeto : any,
 
 const alterarBanco = (text: any, 
     cancelarTabelaAtual: () => void, 
-    setAnimation : React.Dispatch<React.SetStateAction<boolean>>
+    setAnimation : React.Dispatch<React.SetStateAction<boolean>>,
+    setAviso : React.Dispatch<React.SetStateAction<boolean>>
     ) => {
     setAnimation(true)
-    fetch("http://localhost:3001/aplicar", {
+    fetch("/aplicar", {
             method: "POST",
             headers: {
             "Content-Type": "application/json"
@@ -37,6 +38,10 @@ const alterarBanco = (text: any,
         .then(data => {
             setAnimation(false)
             cancelarTabelaAtual()
+            setAviso(true)
+            setTimeout(() => {
+                setAviso(false)
+            }, 3000);
             })
         .catch(err => {
             setAnimation(false)

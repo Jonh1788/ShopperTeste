@@ -13,6 +13,7 @@ function App() {
   const [validar, setValidar] = useState<boolean>(false)
   const [aplicar, setAplicar] = useState<boolean>(false)
   const [modal, setModal] = useState<boolean>(false)
+  const [aviso, setAviso] = useState<boolean>(false)
   const [animation, setAnimation] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement | null>(null)
 
@@ -68,6 +69,7 @@ function App() {
       
      {produtos.length === 0 ? (
       <div>
+        {aviso && <h1 className=" h-10 font-semibold text-emerald-500 bg-emerald-200 border-0 rounded-full ">Novos preços aplicados</h1>}
          <h1 className="text-xl mb-2">Insira um arquivo abaixo para iniciar a validação</h1>
          <input onChange={handleFileChange} ref={inputRef} accept=".csv" className="w-full block text-sm file:bg-emerald-200 file:border-0 file:mr-4 file:py-2 file:rounded-full file:text-sm  file:text-emerald-500 file:font-semibold hover:file:bg-emerald-300" type="file"/>
          </div>
@@ -79,7 +81,7 @@ function App() {
       <div className="ml-auto flex flex-row gap-2 p-3">
 
       <button onClick={() => validarDados(setValidar, dados, setAplicar)} className="w-28 h-10 font-semibold text-emerald-500 bg-emerald-200 border-0 rounded-full hover:bg-emerald-300">Validar</button>
-      <button onClick={() => alterarBanco(produtos, cancelarTabelaAtual, setAnimation)} disabled={!aplicar} className="disabled:bg-gray-400 disabled:text-zinc-900 w-28 h-10 font-semibold text-emerald-500 bg-emerald-200 border-0 rounded-full hover:bg-emerald-300 flex justify-center items-center">{animation ? <Loader2 className="text-emerald-500 animate-spin" strokeWidth={4} /> : "Atualizar"}</button>
+      <button onClick={() => alterarBanco(produtos, cancelarTabelaAtual, setAnimation, setAviso)} disabled={!aplicar} className="disabled:bg-gray-400 disabled:text-zinc-900 w-28 h-10 font-semibold text-emerald-500 bg-emerald-200 border-0 rounded-full hover:bg-emerald-300 flex justify-center items-center">{animation ? <Loader2 className="text-emerald-500 animate-spin" strokeWidth={4} /> : "Atualizar"}</button>
       <button onClick={cancelarTabelaAtual} className="w-28 h-10 font-semibold text-emerald-500 bg-emerald-200 border-0 rounded-full hover:bg-emerald-300">Cancelar</button>
       </div>
       </div>
