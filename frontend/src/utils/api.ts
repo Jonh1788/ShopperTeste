@@ -1,4 +1,8 @@
-const validarAPI = (objeto, setDados) => {
+
+
+
+const validarAPI = (objeto : any, 
+    setDados: React.Dispatch<React.SetStateAction<any[]>>) => {
     fetch("http://localhost:3001/validar", {
           method: "POST",
           headers: {
@@ -16,7 +20,10 @@ const validarAPI = (objeto, setDados) => {
     }
 
 
-const alterarBanco = (text, cancelarTabelaAtual, setAnimation) => {
+const alterarBanco = (text: any, 
+    cancelarTabelaAtual: () => void, 
+    setAnimation : React.Dispatch<React.SetStateAction<boolean>>
+    ) => {
     setAnimation(true)
     fetch("http://localhost:3001/aplicar", {
             method: "POST",

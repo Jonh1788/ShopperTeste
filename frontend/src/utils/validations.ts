@@ -1,6 +1,8 @@
-const validarIsNaN = (objeto) => {
+import { Produtos } from "./objectFactory"
 
-    objeto.some(objeto => {
+const validarIsNaN = (objeto : any[]): boolean => {
+
+    objeto.some((objeto: any)  => {
 
         for(const chave in objeto){
 
@@ -13,11 +15,17 @@ const validarIsNaN = (objeto) => {
 
         return false
     })
+
+    return false
 }
 
-const validarDados = (setValidar, dados, setAplicar) => {
+const validarDados = (setValidar: React.Dispatch<React.SetStateAction<boolean>>, 
+  dados: any[], 
+  setAplicar: React.Dispatch<React.SetStateAction<boolean>>
+  ) => {
+
     setValidar(true)
-    const existeErro = dados.some(objeto => {
+    const existeErro = dados.some((objeto: any) => {
       for(const chave in objeto){
         if(chave.toLowerCase().includes('err')){
           return true

@@ -1,4 +1,26 @@
-export default function Table({ dados, validar }) {
+type ProdutoBancoDeDados = {
+  
+    isPack: boolean
+    pack_code: string
+    unity_code?: string
+    code?: string
+    foundError?: string
+    packName?: string
+    name?: string
+    packPrice?: string
+    sales_price?: string
+    newValue: string
+    valueError?: string
+    custError?: string
+  
+}
+
+type TableProps = {
+  dados: ProdutoBancoDeDados[];
+  validar: boolean;
+};
+
+const Table : React.FC<TableProps> = ({ dados, validar }) => {
 
     return(
         <table className="w-[100%] h-auto">
@@ -51,3 +73,5 @@ export default function Table({ dados, validar }) {
       </table>
     )
 }
+
+export default Table
