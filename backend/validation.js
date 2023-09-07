@@ -12,6 +12,7 @@ const validar = async (prodID, newValue) => {
         
         return {foundError: `Produto com code ${prodID} não encontrado` }
     }
+	dados.newValue = novoValor
 
     let sales_price = 0
     let cost_price = 0
@@ -80,7 +81,22 @@ const enviar = async (prodID, new_value)  => {
     await atualizar(id, novoValor)
 }
 
+const validarArray = async (objetos) => {
+        
+	const objetosValidados = []
+
+	
+        for(const objeto of objetos){
+	const objetoValidado = await validar(Number(objeto.product_code), Number(objeto.new_price))
+	objetosValidados.push(objetoValidado)
+	}
+	
+	console.log(objetosValidados)
+	return objetosValidados
+}
+
 module.exports = {
     validar,
-    enviar
+    enviar,
+    validarArray
 }
