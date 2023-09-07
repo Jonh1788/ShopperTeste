@@ -22,9 +22,21 @@ Antes de começar, você deve ter o Node.js, o npm (Node Package Manager) e o My
 1. Execute o arquivo `database.sql` que acompanha este projeto para criar e preencher as tabelas do banco de dados. Você pode usar o comando:
 
    ```shell
-   mysql -u SEU_USUARIO -p < database.sql
+   mysql -u SEU_USUARIO -p nome_do_seu_banco < database.sql
    
 Substitua `SEU_USUARIO` pelo nome de usuário do MySQL.
+Substitua `nome_do_seu_banco` pelo nome do banco de dados criado no MySQL.
+Caso ainda não possua um banco de dados, pode fazer o seguinte:
+
+   ```shell
+   mysql -u SEU_USUARIO -p
+
+Insira sua senha criada ao instalar o MySQL, e em seguida execute:
+
+   ```shell
+  CREATE DATABASE nome_do_banco;
+
+Substitua nome_do_banco pelo que deseja, e em seguida volte ao passo 1.
 
 ### Configuração do Backend
 
