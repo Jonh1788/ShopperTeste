@@ -34,7 +34,7 @@ Antes de começar, você deve ter o Node.js, o npm (Node Package Manager) e o My
    ```
 5. Insira sua senha criada ao instalar o MySQL, e em seguida execute:
 
-   ```sql
+   ```shell
   CREATE DATABASE nome_do_banco;
    ```
 
