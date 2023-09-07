@@ -1,7 +1,7 @@
 type ProdutoBancoDeDados = {
   
-    isPack: boolean
-    pack_code: string
+    isPack?: boolean
+    pack_code?: string
     unity_code?: string
     code?: string
     foundError?: string
@@ -9,7 +9,7 @@ type ProdutoBancoDeDados = {
     name?: string
     packPrice?: string
     sales_price?: string
-    newValue: string
+    newValue?: string
     valueError?: string
     custError?: string
   
