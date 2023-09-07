@@ -53,10 +53,10 @@ Antes de começar, você deve ter o Node.js, o npm (Node Package Manager) e o My
    ```
 4. Configure as variáveis de ambiente criando um arquivo `.env` na pasta `backend` e defina as variáveis necessárias:
    
-   DB_HOST=seu_host_do_mysql  
-   DB_USER=seu_usuario_do_mysql  
-   DB_PASSWORD=sua_senha_do_mysql  
-   DB_NAME=nome_do_banco_de_dados  
+   DATABASE_HOST=seu_host_do_mysql  
+   DATABASE_USER=seu_usuario_do_mysql  
+   DATABASE_PASS=sua_senha_do_mysql  
+   DATABASE=nome_do_banco_de_dados  
    
 6. Inicie o servidor do backend:
    ```shell
