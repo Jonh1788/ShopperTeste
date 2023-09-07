@@ -1,7 +1,7 @@
 const Express = require('express')
 const cors = require('cors')
 const { selectAll, selectPacks } = require('./db')
-const { validar, enviar, validarArray } = require('./validation')
+const { validar, enviar, validarArray, enviarArray } = require('./validation')
 
 
 
@@ -19,6 +19,14 @@ app.post('/validar', async (req, res) => {
 
     const value = req.body
     const resposta = await validarArray(value)
+    //console.log(resposta)
+    res.json(resposta)
+})
+
+app.post('/aplicar', async (req, res) => {
+
+    const value = req.body
+    const resposta = await enviarArray(value)
     //console.log(resposta)
     res.json(resposta)
 })

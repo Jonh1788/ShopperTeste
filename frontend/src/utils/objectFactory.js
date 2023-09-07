@@ -8,10 +8,10 @@ const objectCreate = (separar) => {
 	
 	 const proximo = arrayStrings[i].split(',')
 	 if(proximo[0].length > 0){
-
+			Number(proximo[0])
 			const objeto = {
-				[headers[0]]: proximo[0],
-				[headers[1]]: proximo[1],
+				[headers[0]]: (isNaN(Number(proximo[0])) ? "NaN": proximo[0]),
+				[headers[1]]: (isNaN(Number(proximo[1])) ? "NaN": proximo[1]),
 			}
 
 			arrayObject.push(objeto)

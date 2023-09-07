@@ -20,10 +20,12 @@ const validar = async (prodID, newValue) => {
     if(await isPack(id)){
         sales_price = dados.packPrice
         cost_price = dados.packCostPrice
+        dados.isPack = true
 
     } else {
         sales_price = dados.sales_price
         cost_price = dados.cost_price
+        dados.isPack = false
     }
     
 
@@ -95,8 +97,24 @@ const validarArray = async (objetos) => {
 	return objetosValidados
 }
 
+
+
+const enviarArray = async (objetos) => {
+        
+	const objetosEnviados = []
+
+	
+        for(const objeto of objetos){
+	const objetoEnviado = await enviar(Number(objeto.product_code), Number(objeto.new_price))
+	objetosEnviados.push(objetoEnviado)
+	}
+	
+	console.log(objetosEnviados)
+	return objetosEnviados
+}
 module.exports = {
     validar,
     enviar,
-    validarArray
+    validarArray,
+    enviarArray
 }

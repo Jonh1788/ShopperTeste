@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+body{
+    margin: 0;
+    padding: 0;
+}
+table{
+    border-collapse: collapse;
+}
+th, td{
+    border-bottom: 1px #dddddd solid;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){
+    background-color: #09000011;
+}
+
+tr:hover{
+    background-color: rgba(47, 176, 99, 0.529);
+}
