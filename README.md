@@ -23,6 +23,7 @@ Antes de começar, você deve ter o Node.js, o npm (Node Package Manager) e o My
 
    ```shell
    mysql -u SEU_USUARIO -p nome_do_seu_banco < database.sql
+   ```
    
 2. Substitua `SEU_USUARIO` pelo nome de usuário do MySQL.
 3. Substitua `nome_do_seu_banco` pelo nome do banco de dados criado no MySQL.
@@ -30,7 +31,7 @@ Antes de começar, você deve ter o Node.js, o npm (Node Package Manager) e o My
 
    ```shell
    mysql -u SEU_USUARIO -p
-
+   ```
 5. Insira sua senha criada ao instalar o MySQL, e em seguida execute:
 
    ```sql
