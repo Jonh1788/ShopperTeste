@@ -1,7 +1,7 @@
 const Express = require('express')
 const cors = require('cors')
-const { selectAll, selectPacks } = require('./db')
-const { validar, enviar, validarArray, enviarArray } = require('./validation')
+const { selectAll } = require('./db')
+const { validarArray, enviarArray } = require('./validation')
 
 
 

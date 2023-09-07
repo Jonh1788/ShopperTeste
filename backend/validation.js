@@ -55,6 +55,7 @@ const enviar = async (prodID, new_value)  => {
     console.log(dados)
     const id = Number(prodID)
     const novoValor = Number(new_value)
+    
     if(await isPack(id)){
 
         await atualizar(id, novoValor)
@@ -74,7 +75,6 @@ const enviar = async (prodID, new_value)  => {
 
         console.log(dados.diffValue)
         const newPackPrice = (dados.diffValue * Number(dados.qty)) + Number(dados.packPrice)
-        
         await atualizar(dados.pack_code, newPackPrice)
         
 
@@ -84,11 +84,10 @@ const enviar = async (prodID, new_value)  => {
 }
 
 const validarArray = async (objetos) => {
-        
+    
+    
 	const objetosValidados = []
-
-	
-        for(const objeto of objetos){
+    for(const objeto of objetos){
 	const objetoValidado = await validar(Number(objeto.product_code), Number(objeto.new_price))
 	objetosValidados.push(objetoValidado)
 	}
@@ -100,11 +99,10 @@ const validarArray = async (objetos) => {
 
 
 const enviarArray = async (objetos) => {
-        
-	const objetosEnviados = []
-
-	
-        for(const objeto of objetos){
+    
+    console.log(objetos)
+	const objetosEnviados = []	
+    for(const objeto of objetos){
 	const objetoEnviado = await enviar(Number(objeto.product_code), Number(objeto.new_price))
 	objetosEnviados.push(objetoEnviado)
 	}
