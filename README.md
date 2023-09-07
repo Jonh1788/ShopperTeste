@@ -43,16 +43,25 @@ Antes de começar, você deve ter o Node.js, o npm (Node Package Manager) e o My
 ### Configuração do Backend
 
 1. Navegue até a pasta do backend:
- cd backend
-2. Instale as dependências do backend:
+   ```shell
+   cd backend
+   ```
+ 
+3. Instale as dependências do backend:
+   ```shell
    npm install
-3. Configure as variáveis de ambiente criando um arquivo `.env` na pasta `backend` e defina as variáveis necessárias:
+   ```
+4. Configure as variáveis de ambiente criando um arquivo `.env` na pasta `backend` e defina as variáveis necessárias:
+   
    DB_HOST=seu_host_do_mysql
    DB_USER=seu_usuario_do_mysql
    DB_PASSWORD=sua_senha_do_mysql
    DB_NAME=nome_do_banco_de_dados
-4. Inicie o servidor do backend:
+   
+6. Inicie o servidor do backend:
+   ```shell
    npm start
+   ```
    O servidor estará em execução na porta 3001 por padrão.
 
 
